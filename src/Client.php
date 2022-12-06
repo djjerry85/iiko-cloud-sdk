@@ -174,4 +174,15 @@ final class Client
 
         return new Menu($response);
     }
+
+    /**
+     * @throws IIkoAuthException
+     * @throws IIkoRequestException
+     */
+    public function createOrder(Entity\Requests\CreateOrder\Request $request): Entity\Responses\CreateOrder\Response
+    {
+        $response = $this->apiRequest('POST', Constants::CREATE_ORDER_URL, $request);
+
+        return new Entity\Responses\CreateOrder\Response($response);
+    }
 }

@@ -12,6 +12,8 @@ class Constants
 
     public const NOMENCLATURE_URL = 'nomenclature';
 
+    public const CREATE_ORDER_URL = 'order/create';
+
     public const API_LOGIN = 'apiLogin';
 
     public const ERROR_DESCRIPTION = 'errorDescription';
