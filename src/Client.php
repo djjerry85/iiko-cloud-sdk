@@ -8,6 +8,8 @@ use UsePack\IikoCloud\Entity\Requests\BaseRequest;
 use UsePack\IikoCloud\Entity\Requests\MenuRequest;
 use UsePack\IikoCloud\Entity\Requests\OrganizationsRequest;
 use UsePack\IikoCloud\Entity\Responses\Menu;
+use UsePack\IikoCloud\Entity\Responses\OrderType\OrderType;
+use UsePack\IikoCloud\Entity\Responses\OrderType\OrderTypeGroup;
 use UsePack\IikoCloud\Entity\Responses\Organization;
 use UsePack\IikoCloud\Entity\Responses\PaymentType;
 use UsePack\IikoCloud\Exceptions\IIkoAuthException;
@@ -187,6 +189,19 @@ final class Client
         $response = $this->apiRequest('POST', Constants::PAYMENT_TYPES_URL, $request);
 
         return array_map(fn ($item) => new PaymentType($item), $response['paymentTypes']);
+    }
+
+    /**
+     * @return OrderTypeGroup[]
+     *
+     * @throws IIkoAuthException
+     * @throws IIkoRequestException
+     */
+    public function getOrderTypes(Entity\Requests\OrderTypesRequest $request): array
+    {
+        $response = $this->apiRequest('POST', Constants::ORDER_TYPES, $request);
+
+        return array_map(fn ($item) => new OrderTypeGroup($item), $response['orderTypes']);
     }
 
     /**

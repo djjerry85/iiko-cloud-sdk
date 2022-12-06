@@ -14,6 +14,8 @@ class Constants
 
     public const CREATE_ORDER_URL = 'order/create';
 
+    public const ORDER_TYPES = 'deliveries/order_types';
+
     public const PAYMENT_TYPES_URL = 'payment_types';
 
     public const API_LOGIN = 'apiLogin';
