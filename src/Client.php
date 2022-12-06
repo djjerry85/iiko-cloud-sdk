@@ -9,6 +9,7 @@ use UsePack\IikoCloud\Entity\Requests\MenuRequest;
 use UsePack\IikoCloud\Entity\Requests\OrganizationsRequest;
 use UsePack\IikoCloud\Entity\Responses\Menu;
 use UsePack\IikoCloud\Entity\Responses\Organization;
+use UsePack\IikoCloud\Entity\Responses\PaymentType;
 use UsePack\IikoCloud\Exceptions\IIkoAuthException;
 use UsePack\IikoCloud\Exceptions\IIkoRequestException;
 use UsePack\IikoCloud\Exceptions\UnsupportedHttpRequestType;
@@ -173,6 +174,19 @@ final class Client
         $response = $this->apiRequest('POST', Constants::NOMENCLATURE_URL, $filter);
 
         return new Menu($response);
+    }
+
+    /**
+     * @return PaymentType[]
+     *
+     * @throws IIkoAuthException
+     * @throws IIkoRequestException
+     */
+    public function getPaymentTypes(Entity\Requests\PaymentTypesRequest $request): array
+    {
+        $response = $this->apiRequest('POST', Constants::PAYMENT_TYPES_URL, $request);
+
+        return array_map(fn ($item) => new PaymentType($item), $response['paymentTypes']);
     }
 
     /**
