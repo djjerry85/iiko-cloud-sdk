@@ -6,6 +6,10 @@ use UsePack\IikoCloud\Entity\Requests\BaseRequest;
 
 class RegularCustomer extends BaseRequest
 {
+    public const GENDER_NOT_SPECIFIED = 'NotSpecified';
+    public const GENDER_MALE = 'Male';
+    public const GENDER_FEMALE = 'Female';
+
     protected string $type = 'regular';
 
     /**
@@ -60,7 +64,7 @@ class RegularCustomer extends BaseRequest
      *
      * Enum: "NotSpecified" "Male" "Female"
      */
-    protected ?string $gender;
+    protected string $gender = self::GENDER_NOT_SPECIFIED;
 
     public function setId(?string $id): void
     {

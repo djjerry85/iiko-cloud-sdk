@@ -16,6 +16,13 @@ class Response extends BaseResponse
      */
     protected OrderInfo $orderInfo;
 
+    /** @noinspection PhpMissingParentConstructorInspection */
+    public function __construct(?array $properties = null)
+    {
+        $this->correlationId = $properties['correlationId'];
+        $this->orderInfo = OrderInfo::create($properties['orderInfo']);
+    }
+
     public function getCorrelationId(): string
     {
         return $this->correlationId;

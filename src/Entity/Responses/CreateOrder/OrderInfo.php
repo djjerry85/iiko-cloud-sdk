@@ -51,7 +51,7 @@ class OrderInfo extends BaseResponse
      *
      * - Required only if "creationStatus"="Error".
      */
-    protected ?ErrorInfo $errorInfo;
+    protected mixed $errorInfo;
 
     /**
      * Order creation details.
@@ -59,6 +59,15 @@ class OrderInfo extends BaseResponse
      * - Field is filled up if "creationStatus"="Success".
      */
     protected mixed $order;
+
+    public function __construct(?array $properties = null)
+    {
+        parent::__construct($properties);
+
+        if (!is_null($this->errorInfo)) {
+            $this->errorInfo = ErrorInfo::create($this->errorInfo);
+        }
+    }
 
     public function getId(): string
     {

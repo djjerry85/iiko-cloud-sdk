@@ -35,7 +35,7 @@ class ProductOrderItem extends BaseRequest
      *
      * - If sent null, it generates automatically on iikoTransport side.
      */
-    protected ?float $positionId;
+    protected ?string $positionId;
 
     /**
      * Quantity.
