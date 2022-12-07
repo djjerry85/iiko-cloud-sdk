@@ -35,7 +35,7 @@ class Modifier extends BaseRequest
      *
      * - If sent null, it generates automatically on iikoTransport side.
      */
-    protected ?float $positionId = null;
+    protected ?string $positionId = null;
 
     public function __construct(string $productId, float $amount)
     {
@@ -63,7 +63,7 @@ class Modifier extends BaseRequest
         $this->price = $price;
     }
 
-    public function setPositionId(?float $positionId): void
+    public function setPositionId(?string $positionId): void
     {
         $this->positionId = $positionId;
     }

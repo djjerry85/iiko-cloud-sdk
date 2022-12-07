@@ -91,7 +91,7 @@ class ProductOrderItem extends BaseRequest
         $this->price = $price;
     }
 
-    public function setPositionId(?float $positionId): void
+    public function setPositionId(?string $positionId): void
     {
         $this->positionId = $positionId;
     }
