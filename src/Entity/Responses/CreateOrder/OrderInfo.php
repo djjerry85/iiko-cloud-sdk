@@ -44,7 +44,7 @@ class OrderInfo extends BaseResponse
      *
      * - Enum: "Success" "InProgress" "Error"
      */
-    protected int $creationStatus;
+    protected string $creationStatus;
 
     /**
      * Order creation details.
