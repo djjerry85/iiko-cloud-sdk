@@ -17,7 +17,7 @@ class RegularCustomer extends BaseRequest
      *
      * - If null - the phone number is searched in database, otherwise the new customer is created in RMS.
      */
-    protected ?string $id;
+    protected ?string $id = null;
 
     /**
      * Name of customer.
@@ -25,21 +25,21 @@ class RegularCustomer extends BaseRequest
      * - [ 0 .. 60 ] characters.
      * - Required for new customers (i.e. if "id" == null) Not required if "id" specified.
      */
-    protected ?string $name;
+    protected ?string $name = null;
 
     /**
      * Last name.
      *
      * - [ 0 .. 60 ] characters.
      */
-    protected ?string $surname;
+    protected ?string $surname = null;
 
     /**
      * Comment.
      *
      * - [ 0 .. 60 ] characters
      */
-    protected ?string $comment;
+    protected ?string $comment = null;
 
     /**
      * Date of birth.
@@ -47,17 +47,17 @@ class RegularCustomer extends BaseRequest
      * - [ 0 .. 60 ] characters
      * - <yyyy-MM-dd HH:mm:ss.fff>
      */
-    protected ?string $birthdate;
+    protected ?string $birthdate = null;
 
     /**
      * Email.
      */
-    protected ?string $email;
+    protected ?string $email = null;
 
     /**
      * Whether customer receives order status notification messages.
      */
-    protected ?bool $shouldReceiveOrderStatusNotifications;
+    protected ?bool $shouldReceiveOrderStatusNotifications = null;
 
     /**
      * Gender.

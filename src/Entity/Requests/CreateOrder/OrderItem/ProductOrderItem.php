@@ -23,19 +23,19 @@ class ProductOrderItem extends BaseRequest
      *
      * @var Modifier[]|null
      */
-    protected ?array $modifiers;
+    protected ?array $modifiers = null;
 
     /**
      * Price per item unit. Can be sent different from the price in the base menu.
      */
-    protected ?float $price;
+    protected ?float $price = null;
 
     /**
      * Unique identifier of the item in the order. MUST be unique for the whole system. Therefore it must be generated with Guid.NewGuid().
      *
      * - If sent null, it generates automatically on iikoTransport side.
      */
-    protected ?string $positionId;
+    protected ?string $positionId = null;
 
     /**
      * Quantity.
@@ -47,19 +47,19 @@ class ProductOrderItem extends BaseRequest
     /**
      * Size ID. Required if a stock list item has a size scale.
      */
-    protected ?string $productSizeId;
+    protected ?string $productSizeId = null;
 
     /**
      * Size ID. Required if a stock list item has a size scale.
      */
-    protected ?ComboInformation $comboInformation;
+    protected ?ComboInformation $comboInformation = null;
 
     /**
      * Comment.
      *
      * - [ 0 .. 255 ] characters
      */
-    protected ?string $comment;
+    protected ?string $comment = null;
 
     public function __construct(string $productId, float $amount)
     {

@@ -6,7 +6,7 @@ use UsePack\IikoCloud\Entity\Requests\BaseRequest;
 
 class Settings extends BaseRequest
 {
-    protected ?int $transportToFrontTimeout;
+    protected ?int $transportToFrontTimeout = null;
 
     public function setTransportToFrontTimeout(int $seconds): void
     {

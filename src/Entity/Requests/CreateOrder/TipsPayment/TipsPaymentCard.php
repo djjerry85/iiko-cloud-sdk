@@ -9,7 +9,7 @@ class TipsPaymentCard extends TipsPayment
      *
      * - In iikoFront, it is possible to make card payment without card No.
      */
-    protected ?string $number;
+    protected ?string $number = null;
 
     /**
      * Enum: Cash, Card, External.

@@ -23,19 +23,19 @@ class Modifier extends BaseRequest
      *
      * - Can be obtained by /api/1/nomenclature operation.
      */
-    protected ?string $productGroupId;
+    protected ?string $productGroupId = null;
 
     /**
      * Unit price.
      */
-    protected ?float $price;
+    protected ?float $price = null;
 
     /**
      * Unique identifier of the item in the order. MUST be unique for the whole system. Therefore it must be generated with Guid.NewGuid().
      *
      * - If sent null, it generates automatically on iikoTransport side.
      */
-    protected ?float $positionId;
+    protected ?float $positionId = null;
 
     public function __construct(string $productId, float $amount)
     {

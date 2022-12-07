@@ -12,7 +12,7 @@ class Request extends BaseRequest
 
     protected Order $order;
 
-    protected ?Settings $transportToFrontTimeout;
+    protected ?Settings $transportToFrontTimeout = null;
 
     public function __construct(
         string $organizationId,

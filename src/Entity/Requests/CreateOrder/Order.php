@@ -9,14 +9,14 @@ class Order extends BaseRequest
     /**
      * Order ID.
      */
-    protected ?string $id;
+    protected ?string $id = null;
 
     /**
      * Order external number.
      *
      * - [ 0 .. 50 ] characters
      */
-    protected ?string $externalNumber;
+    protected ?string $externalNumber = null;
 
     /**
      * Table IDs.
@@ -25,27 +25,27 @@ class Order extends BaseRequest
      *
      * @var string[]|null
      */
-    protected ?array $tableIds;
+    protected ?array $tableIds = null;
 
     /**
      * Guest.
      */
-    protected Customer\RegularCustomer|Customer\OneTimeCustomer|null $customer;
+    protected Customer\RegularCustomer|Customer\OneTimeCustomer|null $customer = null;
 
     /**
      * Guest phone.
      */
-    protected ?string $phone;
+    protected ?string $phone = null;
 
     /**
      * Guest.
      */
-    protected ?OrderGuests $guests;
+    protected ?OrderGuests $guests = null;
 
     /**
      * Tab name (only for fast-food terminals group in tab mode).
      */
-    protected ?string $tabName;
+    protected ?string $tabName = null;
 
     /**
      * Order items.
@@ -59,43 +59,43 @@ class Order extends BaseRequest
      *
      * @var OrderCombo[]|null
      */
-    protected ?array $combos;
+    protected ?array $combos = null;
 
     /**
      * Order payment components.
      *
      * @var Payment\Payment[]|null
      */
-    protected ?array $payments;
+    protected ?array $payments = null;
 
     /**
      * Order tips components.
      *
      * @var TipsPayment\TipsPayment[]|null
      */
-    protected ?array $tips;
+    protected ?array $tips = null;
 
     /**
      * The string key (marker) of the source (partner - api user) that created the order. Needed to limit the visibility of orders for external integration.
      */
-    protected ?string $sourceKey;
+    protected ?string $sourceKey = null;
 
     /**
      * Discounts/surcharges.
      */
-    protected ?DiscountsInfo\DiscountsInfo $discountsInfo;
+    protected ?DiscountsInfo\DiscountsInfo $discountsInfo = null;
 
     /**
      * Information about Loyalty app.
      */
-    protected ?IikoCard5Info $iikoCard5Info;
+    protected ?IikoCard5Info $iikoCard5Info = null;
 
     /**
      * Order type ID.
      *
      * - Can be obtained by /api/1/deliveries/order_types operation
      */
-    protected ?string $orderTypeId;
+    protected ?string $orderTypeId = null;
 
     public function setId(?string $id): void
     {

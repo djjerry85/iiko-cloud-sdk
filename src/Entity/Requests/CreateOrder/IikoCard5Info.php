@@ -9,14 +9,14 @@ class IikoCard5Info extends BaseRequest
     /**
      * Coupon No. that has to be considered when calculating loyalty program.
      */
-    protected ?string $coupon;
+    protected ?string $coupon = null;
 
     /**
      * Information about applied manual conditions.
      *
      * @var string[]|null
      */
-    protected ?array $applicableManualConditions;
+    protected ?array $applicableManualConditions = null;
 
     public function setCoupon(?string $coupon): void
     {

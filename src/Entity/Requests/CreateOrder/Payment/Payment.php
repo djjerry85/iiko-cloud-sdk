@@ -28,17 +28,17 @@ class Payment extends BaseRequest
     /**
      * Whether payment item is processed by external payment system (made from outside).
      */
-    protected ?bool $isProcessedExternally;
+    protected ?bool $isProcessedExternally = null;
 
     /**
      * Additional payment parameters.
      */
-    protected ?PaymentAdditionalData $paymentAdditionalData;
+    protected ?PaymentAdditionalData $paymentAdditionalData = null;
 
     /**
      * Whether the payment item is externally fiscalized.
      */
-    protected ?bool $isFiscalizedExternally;
+    protected ?bool $isFiscalizedExternally = null;
 
     public function __construct(float $sum, string $paymentTypeId)
     {

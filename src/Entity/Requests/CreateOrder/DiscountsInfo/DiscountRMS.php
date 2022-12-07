@@ -18,14 +18,14 @@ class DiscountRMS extends BaseRequest
     /**
      * Discount/surcharge sum.
      */
-    protected ?float $sum;
+    protected ?float $sum = null;
 
     /**
      * Discount information for order items.
      *
      * @var string[]|null
      */
-    protected ?array $selectivePositions;
+    protected ?array $selectivePositions = null;
 
     public function __construct(string $discountTypeId, float $sum)
     {

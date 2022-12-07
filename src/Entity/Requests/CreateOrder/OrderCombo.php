@@ -34,7 +34,7 @@ class OrderCombo extends BaseRequest
     /**
      * Card program ID.
      */
-    protected string $programId;
+    protected ?string $programId = null;
 
     public function __construct(string $id, string $name, int $amount, float $price, string $sourceId)
     {
@@ -70,7 +70,7 @@ class OrderCombo extends BaseRequest
         $this->sourceId = $sourceId;
     }
 
-    public function setProgramId(string $programId): void
+    public function setProgramId(?string $programId): void
     {
         $this->programId = $programId;
     }

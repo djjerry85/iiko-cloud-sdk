@@ -9,14 +9,14 @@ class DiscountsInfo extends BaseRequest
     /**
      * Track of discount card to be applied to order.
      */
-    protected ?DiscountCard $card;
+    protected ?DiscountCard $card = null;
 
     /**
      * Discounts/surcharges.
      *
      * @var (DiscountIikoCard|DiscountRMS)[]
      */
-    protected ?array $discounts;
+    protected ?array $discounts = null;
 
     /**
      * Track of discount card to be applied to order.
