@@ -48,8 +48,9 @@ class TipsPayment extends BaseRequest
      */
     protected ?bool $isFiscalizedExternally;
 
-    public function __construct(float $sum, string $paymentTypeId)
+    public function __construct(string $tipsTypeId, float $sum, string $paymentTypeId)
     {
+        $this->tipsTypeId = $tipsTypeId;
         $this->sum = $sum;
         $this->paymentTypeId = $paymentTypeId;
     }
