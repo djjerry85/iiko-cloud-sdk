@@ -208,6 +208,17 @@ final class Client
      * @throws IIkoAuthException
      * @throws IIkoRequestException
      */
+    public function createDelivery(Entity\Requests\CreateDelivery\Request $request): Entity\Responses\CreateDelivery\Response
+    {
+        $response = $this->apiRequest('POST', Constants::CREATE_DELIVERY_URL, $request);
+
+        return new Entity\Responses\CreateDelivery\Response($response);
+    }
+
+    /**
+     * @throws IIkoAuthException
+     * @throws IIkoRequestException
+     */
     public function createOrder(Entity\Requests\CreateOrder\Request $request): Entity\Responses\CreateOrder\Response
     {
         $response = $this->apiRequest('POST', Constants::CREATE_ORDER_URL, $request);

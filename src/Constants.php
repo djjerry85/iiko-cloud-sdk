@@ -12,9 +12,11 @@ class Constants
 
     public const NOMENCLATURE_URL = 'nomenclature';
 
-    public const CREATE_ORDER_URL = 'order/create';
-
     public const ORDER_TYPES = 'deliveries/order_types';
+
+    public const CREATE_DELIVERY_URL = 'deliveries/create';
+
+    public const CREATE_ORDER_URL = 'order/create';
 
     public const PAYMENT_TYPES_URL = 'payment_types';
 
