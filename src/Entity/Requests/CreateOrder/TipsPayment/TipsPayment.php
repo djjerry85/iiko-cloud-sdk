@@ -1,8 +1,9 @@
 <?php
 
-namespace UsePack\IikoCloud\Entity\Requests\CreateOrder;
+namespace UsePack\IikoCloud\Entity\Requests\CreateOrder\TipsPayment;
 
 use UsePack\IikoCloud\Entity\Requests\BaseRequest;
+use UsePack\IikoCloud\Entity\Requests\CreateOrder\Payment\PaymentAdditionalData;
 
 class TipsPayment extends BaseRequest
 {

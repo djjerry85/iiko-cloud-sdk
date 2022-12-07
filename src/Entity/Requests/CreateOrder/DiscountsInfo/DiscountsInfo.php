@@ -1,6 +1,6 @@
 <?php
 
-namespace UsePack\IikoCloud\Entity\Requests\CreateOrder;
+namespace UsePack\IikoCloud\Entity\Requests\CreateOrder\DiscountsInfo;
 
 use UsePack\IikoCloud\Entity\Requests\BaseRequest;
 

@@ -30,7 +30,7 @@ class Order extends BaseRequest
     /**
      * Guest.
      */
-    protected RegularCustomer|OneTimeCustomer|null $customer;
+    protected Customer\RegularCustomer|Customer\OneTimeCustomer|null $customer;
 
     /**
      * Guest phone.
@@ -50,7 +50,7 @@ class Order extends BaseRequest
     /**
      * Order items.
      *
-     * @var ProductOrderItem[]
+     * @var OrderItem\ProductOrderItem[]
      */
     protected array $items = [];
 
@@ -64,14 +64,14 @@ class Order extends BaseRequest
     /**
      * Order payment components.
      *
-     * @var Payment[]|null
+     * @var Payment\Payment[]|null
      */
     protected ?array $payments;
 
     /**
      * Order tips components.
      *
-     * @var TipsPayment[]|null
+     * @var TipsPayment\TipsPayment[]|null
      */
     protected ?array $tips;
 
@@ -83,7 +83,7 @@ class Order extends BaseRequest
     /**
      * Discounts/surcharges.
      */
-    protected ?DiscountsInfo $discountsInfo;
+    protected ?DiscountsInfo\DiscountsInfo $discountsInfo;
 
     /**
      * Information about Loyalty app.
@@ -115,7 +115,7 @@ class Order extends BaseRequest
         $this->tableIds = $tableIds;
     }
 
-    public function setCustomer(RegularCustomer|OneTimeCustomer|null $customer): void
+    public function setCustomer(Customer\RegularCustomer|Customer\OneTimeCustomer|null $customer): void
     {
         $this->customer = $customer;
     }
@@ -136,14 +136,14 @@ class Order extends BaseRequest
     }
 
     /**
-     * @param ProductOrderItem[] $items
+     * @param OrderItem\ProductOrderItem[] $items
      */
     public function setItems(array $items): void
     {
         $this->items = $items;
     }
 
-    public function addItem(ProductOrderItem $item): void
+    public function addItem(OrderItem\ProductOrderItem $item): void
     {
         $this->items[] = $item;
     }
@@ -166,14 +166,14 @@ class Order extends BaseRequest
     }
 
     /**
-     * @param Payment[]|null $payments
+     * @param Payment\Payment[]|null $payments
      */
     public function setPayments(?array $payments): void
     {
         $this->payments = $payments;
     }
 
-    public function addPayment(Payment $payment): void
+    public function addPayment(Payment\Payment $payment): void
     {
         if (!is_array($this->payments)) {
             $this->payments = [];
@@ -183,14 +183,14 @@ class Order extends BaseRequest
     }
 
     /**
-     * @param TipsPayment[]|null $tips
+     * @param TipsPayment\TipsPayment[]|null $tips
      */
     public function setTips(?array $tips): void
     {
         $this->tips = $tips;
     }
 
-    public function addTip(TipsPayment $tip): void
+    public function addTip(TipsPayment\TipsPayment $tip): void
     {
         if (!is_array($this->tips)) {
             $this->tips = [];
@@ -204,7 +204,7 @@ class Order extends BaseRequest
         $this->sourceKey = $sourceKey;
     }
 
-    public function setDiscountsInfo(?DiscountsInfo $discountsInfo): void
+    public function setDiscountsInfo(?DiscountsInfo\DiscountsInfo $discountsInfo): void
     {
         $this->discountsInfo = $discountsInfo;
     }
