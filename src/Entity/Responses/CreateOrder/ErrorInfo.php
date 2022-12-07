@@ -14,12 +14,12 @@ class ErrorInfo extends BaseResponse
     /**
      * Nonlocalized message.
      */
-    protected ?string $message;
+    protected ?string $message = null;
 
     /**
      * Localized message.
      */
-    protected ?string $description;
+    protected ?string $description = null;
 
     /**
      * Additional information.

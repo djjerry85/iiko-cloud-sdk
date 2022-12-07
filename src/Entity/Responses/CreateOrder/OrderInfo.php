@@ -18,12 +18,12 @@ class OrderInfo extends BaseResponse
     /**
      * POS order ID.
      */
-    protected ?string $posId;
+    protected ?string $posId = null;
 
     /**
      * Order external number.
      */
-    protected ?string $externalNumber;
+    protected ?string $externalNumber = null;
 
     /**
      * Organization ID.
@@ -51,14 +51,14 @@ class OrderInfo extends BaseResponse
      *
      * - Required only if "creationStatus"="Error".
      */
-    protected mixed $errorInfo;
+    protected mixed $errorInfo = null;
 
     /**
      * Order creation details.
      *
      * - Field is filled up if "creationStatus"="Success".
      */
-    protected mixed $order;
+    protected mixed $order = null;
 
     public function __construct(?array $properties = null)
     {
