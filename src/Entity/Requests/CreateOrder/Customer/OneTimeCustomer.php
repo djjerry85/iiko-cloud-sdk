@@ -13,15 +13,9 @@ class OneTimeCustomer extends BaseRequest
      */
     protected string $name;
 
-    public function __construct(string $type, string $name)
+    public function __construct(string $name)
     {
-        $this->type = $type;
         $this->name = $name;
-    }
-
-    public function setType(string $type): void
-    {
-        $this->type = $type;
     }
 
     public function setName(string $name): void
