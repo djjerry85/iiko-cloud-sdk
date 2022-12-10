@@ -22,11 +22,15 @@ class BaseRequest implements \JsonSerializable
                 $dynamic[$key] = $this->{$key};
             } elseif (is_array($this->{$key})) {
                 foreach ($this->{$key} as $k => $v) {
-                    $array_from_object = \get_object_vars($v);
+                    if (is_object($v)) {
+                        $array_from_object = \get_object_vars($v);
 
-                    $array_from_object_null_filtered = \array_filter($array_from_object);
-                    if (!empty($array_from_object_null_filtered)) {
-                        $dynamic[$key][] = $array_from_object_null_filtered;
+                        $array_from_object_null_filtered = \array_filter($array_from_object);
+                        if (!empty($array_from_object_null_filtered)) {
+                            $dynamic[$key][] = $array_from_object_null_filtered;
+                        }
+                    } else {
+                        $dynamic[$key][] = $v;
                     }
                 }
             } else {
