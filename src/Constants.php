@@ -12,6 +12,8 @@ class Constants
 
     public const NOMENCLATURE_URL = 'nomenclature';
 
+    public const DISCOUNTS_URL = 'discounts';
+
     public const ORDER_TYPES = 'deliveries/order_types';
 
     public const CREATE_DELIVERY_URL = 'deliveries/create';

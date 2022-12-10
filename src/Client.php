@@ -7,8 +7,8 @@ use GuzzleHttp\RequestOptions;
 use UsePack\IikoCloud\Entity\Requests\BaseRequest;
 use UsePack\IikoCloud\Entity\Requests\MenuRequest;
 use UsePack\IikoCloud\Entity\Requests\OrganizationsRequest;
+use UsePack\IikoCloud\Entity\Responses\Discount\OrganizationDiscounts;
 use UsePack\IikoCloud\Entity\Responses\Menu;
-use UsePack\IikoCloud\Entity\Responses\OrderType\OrderType;
 use UsePack\IikoCloud\Entity\Responses\OrderType\OrderTypeGroup;
 use UsePack\IikoCloud\Entity\Responses\Organization;
 use UsePack\IikoCloud\Entity\Responses\PaymentType;
@@ -202,6 +202,19 @@ final class Client
         $response = $this->apiRequest('POST', Constants::ORDER_TYPES, $request);
 
         return array_map(fn ($item) => new OrderTypeGroup($item), $response['orderTypes']);
+    }
+
+    /**
+     * @return OrganizationDiscounts[]
+     *
+     * @throws IIkoAuthException
+     * @throws IIkoRequestException
+     */
+    public function getDiscounts(Entity\Requests\DiscountsRequest $request): array
+    {
+        $response = $this->apiRequest('POST', Constants::DISCOUNTS_URL, $request);
+
+        return array_map(fn ($item) => new OrganizationDiscounts($item), $response['discounts']);
     }
 
     /**
