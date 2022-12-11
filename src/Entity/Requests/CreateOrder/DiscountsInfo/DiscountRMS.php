@@ -32,14 +32,32 @@ class DiscountRMS extends BaseRequest
         $this->discountTypeId = $discountTypeId;
     }
 
+    public function getDiscountTypeId(): string
+    {
+        return $this->discountTypeId;
+    }
+
     public function setDiscountTypeId(string $discountTypeId): void
     {
         $this->discountTypeId = $discountTypeId;
     }
 
+    public function getSum(): ?float
+    {
+        return $this->sum;
+    }
+
     public function setSum(?float $sum): void
     {
         $this->sum = $sum;
+    }
+
+    /**
+     * @return string[]|null
+     */
+    public function getSelectivePositions(): ?array
+    {
+        return $this->selectivePositions;
     }
 
     /**
