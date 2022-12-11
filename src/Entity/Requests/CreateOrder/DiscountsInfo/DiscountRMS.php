@@ -27,7 +27,7 @@ class DiscountRMS extends BaseRequest
      */
     protected ?array $selectivePositions = null;
 
-    public function __construct(string $discountTypeId, float $sum)
+    public function __construct(string $discountTypeId)
     {
         $this->discountTypeId = $discountTypeId;
     }
