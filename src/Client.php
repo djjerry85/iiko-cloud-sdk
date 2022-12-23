@@ -232,6 +232,17 @@ final class Client
      * @throws IIkoAuthException
      * @throws IIkoRequestException
      */
+    public function retrieveDeliveriesByIds(Entity\Requests\RetrieveDeliveriesByIds $request): Entity\Responses\Deliveries\RetrieveByIds\Response
+    {
+        $response = $this->apiRequest('POST', Constants::RETRIEVE_DELIVERIES_BY_IDS, $request);
+
+        return new Entity\Responses\Deliveries\RetrieveByIds\Response($response);
+    }
+
+    /**
+     * @throws IIkoAuthException
+     * @throws IIkoRequestException
+     */
     public function createOrder(Entity\Requests\CreateOrder\Request $request): Entity\Responses\CreateOrder\Response
     {
         $response = $this->apiRequest('POST', Constants::CREATE_ORDER_URL, $request);

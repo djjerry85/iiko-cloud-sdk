@@ -1,8 +1,10 @@
 <?php
 
-namespace UsePack\IikoCloud\Entity\Responses\CreateDelivery;
+namespace UsePack\IikoCloud\Entity\Responses\Deliveries\RetrieveByIds;
 
 use UsePack\IikoCloud\Entity\Responses\BaseResponse;
+use UsePack\IikoCloud\Entity\Responses\Deliveries\ErrorInfo;
+use UsePack\IikoCloud\Entity\Responses\Deliveries\Order;
 
 class OrderInfo extends BaseResponse
 {
@@ -60,6 +62,10 @@ class OrderInfo extends BaseResponse
         if (!is_null($this->errorInfo)) {
             $this->errorInfo = ErrorInfo::create($this->errorInfo);
         }
+
+        if (!is_null($this->order)) {
+            $this->order = Order::create($this->order);
+        }
     }
 
     public function getId(): string
@@ -92,7 +98,7 @@ class OrderInfo extends BaseResponse
         return $this->errorInfo;
     }
 
-    public function getOrder(): mixed
+    public function getOrder(): ?Order
     {
         return $this->order;
     }
