@@ -249,4 +249,15 @@ final class Client
 
         return new Entity\Responses\CreateOrder\Response($response);
     }
+
+    /**
+     * @throws IIkoAuthException
+     * @throws IIkoRequestException
+     */
+    public function getAllowedDeliveryRestrictions(Entity\Requests\DeliveryRestrictions\AllowedRestrictions\Request $request): Entity\Responses\DeliveryRestrictions\AllowedRestrictions\Response
+    {
+        $response = $this->apiRequest('POST', Constants::DELIVERY_RESTRICTIONS_ALLOWED_URL, $request);
+
+        return new Entity\Responses\DeliveryRestrictions\AllowedRestrictions\Response($response);
+    }
 }
