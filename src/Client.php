@@ -254,6 +254,17 @@ final class Client
      * @throws IIkoAuthException
      * @throws IIkoRequestException
      */
+    public function getDeliveryRestrictions(Entity\Requests\DeliveryRestrictions\Request $request): Entity\Responses\DeliveryRestrictions\Response
+    {
+        $response = $this->apiRequest('POST', Constants::DELIVERY_RESTRICTIONS_URL, $request);
+
+        return new Entity\Responses\DeliveryRestrictions\Response($response);
+    }
+
+    /**
+     * @throws IIkoAuthException
+     * @throws IIkoRequestException
+     */
     public function getAllowedDeliveryRestrictions(Entity\Requests\DeliveryRestrictions\AllowedRestrictions\Request $request): Entity\Responses\DeliveryRestrictions\AllowedRestrictions\Response
     {
         $response = $this->apiRequest('POST', Constants::DELIVERY_RESTRICTIONS_ALLOWED_URL, $request);
