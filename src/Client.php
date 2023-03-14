@@ -271,4 +271,15 @@ final class Client
 
         return new Entity\Responses\DeliveryRestrictions\AllowedRestrictions\Response($response);
     }
+
+    /**
+     * @throws IIkoAuthException
+     * @throws IIkoRequestException
+     */
+    public function getStreetsByCity(Entity\Requests\StreetsByCity\Request $request): Entity\Responses\StreetsByCity\Response
+    {
+        $response = $this->apiRequest('POST', Constants::STREETS_BY_CITY, $request);
+
+        return new Entity\Responses\StreetsByCity\Response($response);
+    }
 }

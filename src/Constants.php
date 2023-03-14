@@ -26,6 +26,8 @@ class Constants
 
     public const DELIVERY_RESTRICTIONS_ALLOWED_URL = 'delivery_restrictions/allowed';
 
+    public const STREETS_BY_CITY = 'streets/by_city';
+
     public const PAYMENT_TYPES_URL = 'payment_types';
 
     public const API_LOGIN = 'apiLogin';
