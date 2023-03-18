@@ -30,6 +30,8 @@ class Constants
 
     public const PAYMENT_TYPES_URL = 'payment_types';
 
+    public const STOP_LISTS = 'stop_lists';
+
     public const API_LOGIN = 'apiLogin';
 
     public const ERROR_DESCRIPTION = 'errorDescription';

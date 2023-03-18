@@ -282,4 +282,15 @@ final class Client
 
         return new Entity\Responses\StreetsByCity\Response($response);
     }
+
+    /**
+     * @throws IIkoAuthException
+     * @throws IIkoRequestException
+     */
+    public function getStopLists(Entity\Requests\StopLists\Request $request): Entity\Responses\StopLists\Response
+    {
+        $response = $this->apiRequest('POST', Constants::STOP_LISTS, $request);
+
+        return new Entity\Responses\StopLists\Response($response);
+    }
 }
