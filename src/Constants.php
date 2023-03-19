@@ -32,6 +32,8 @@ class Constants
 
     public const STOP_LISTS = 'stop_lists';
 
+    public const WEBHOOK_UPDATE_SETTINGS = 'webhooks/update_settings';
+
     public const API_LOGIN = 'apiLogin';
 
     public const ERROR_DESCRIPTION = 'errorDescription';

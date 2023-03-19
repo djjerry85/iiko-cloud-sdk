@@ -293,4 +293,15 @@ final class Client
 
         return new Entity\Responses\StopLists\Response($response);
     }
+
+    /**
+     * @throws IIkoAuthException
+     * @throws IIkoRequestException
+     */
+    public function webhookUpdateSettings(Entity\Requests\Webhook\UpdateSettings\Request $request): Entity\Responses\Webhook\UpdateSettings\Response
+    {
+        $response = $this->apiRequest('POST', Constants::WEBHOOK_UPDATE_SETTINGS, $request);
+
+        return new Entity\Responses\Webhook\UpdateSettings\Response($response);
+    }
 }
