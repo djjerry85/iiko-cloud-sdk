@@ -34,6 +34,8 @@ class Constants
 
     public const WEBHOOK_UPDATE_SETTINGS = 'webhooks/update_settings';
 
+    public const LOYALTY_CALCULATE = 'loyalty/iiko/calculate';
+
     public const API_LOGIN = 'apiLogin';
 
     public const ERROR_DESCRIPTION = 'errorDescription';

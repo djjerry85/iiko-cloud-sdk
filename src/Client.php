@@ -304,4 +304,15 @@ final class Client
 
         return new Entity\Responses\Webhook\UpdateSettings\Response($response);
     }
+
+    /**
+     * @throws IIkoAuthException
+     * @throws IIkoRequestException
+     */
+    public function loyaltyCalculate(Entity\Requests\LoyaltyCalculate\Request $request): Entity\Responses\LoyaltyCalculate\Response
+    {
+        $response = $this->apiRequest('POST', Constants::LOYALTY_CALCULATE, $request);
+
+        return new Entity\Responses\LoyaltyCalculate\Response($response);
+    }
 }
