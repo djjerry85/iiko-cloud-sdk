@@ -36,6 +36,8 @@ class Constants
 
     public const LOYALTY_CALCULATE = 'loyalty/iiko/calculate';
 
+    public const COUPON_INFO = 'loyalty/iiko/coupons/info';
+
     public const API_LOGIN = 'apiLogin';
 
     public const ERROR_DESCRIPTION = 'errorDescription';

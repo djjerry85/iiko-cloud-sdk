@@ -315,4 +315,15 @@ final class Client
 
         return new Entity\Responses\LoyaltyCalculate\Response($response);
     }
+
+    /**
+     * @throws IIkoAuthException
+     * @throws IIkoRequestException
+     */
+    public function getCouponInfo(Entity\Requests\CouponInfo\Request $request): Entity\Responses\CouponInfo\Response
+    {
+        $response = $this->apiRequest('POST', Constants::COUPON_INFO, $request);
+
+        return new Entity\Responses\CouponInfo\Response($response);
+    }
 }
