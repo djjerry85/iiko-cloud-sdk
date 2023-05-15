@@ -88,7 +88,7 @@ class Order extends BaseRequest
     /**
      * Information about Loyalty app.
      */
-    protected ?IikoCard5Info $iikoCard5Info = null;
+    protected ?LoyaltyInfo $loyaltyInfo = null;
 
     /**
      * Order type ID.
@@ -209,9 +209,9 @@ class Order extends BaseRequest
         $this->discountsInfo = $discountsInfo;
     }
 
-    public function setIikoCard5Info(?IikoCard5Info $iikoCard5Info): void
+    public function setLoyaltyInfo(?LoyaltyInfo $loyaltyInfo): void
     {
-        $this->iikoCard5Info = $iikoCard5Info;
+        $this->loyaltyInfo = $loyaltyInfo;
     }
 
     public function setOrderTypeId(?string $orderTypeId): void

@@ -4,7 +4,7 @@ namespace UsePack\IikoCloud\Entity\Requests\CreateOrder;
 
 use UsePack\IikoCloud\Entity\Requests\BaseRequest;
 
-class IikoCard5Info extends BaseRequest
+class LoyaltyInfo extends BaseRequest
 {
     /**
      * Coupon No. that has to be considered when calculating loyalty program.

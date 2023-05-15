@@ -5,7 +5,7 @@ namespace UsePack\IikoCloud\Entity\Requests\CreateDelivery;
 use UsePack\IikoCloud\Entity\Requests\BaseRequest;
 use UsePack\IikoCloud\Entity\Requests\CreateOrder\Customer;
 use UsePack\IikoCloud\Entity\Requests\CreateOrder\DiscountsInfo\DiscountsInfo;
-use UsePack\IikoCloud\Entity\Requests\CreateOrder\IikoCard5Info;
+use UsePack\IikoCloud\Entity\Requests\CreateOrder\LoyaltyInfo;
 use UsePack\IikoCloud\Entity\Requests\CreateOrder\OrderCombo;
 use UsePack\IikoCloud\Entity\Requests\CreateOrder\OrderItem\ProductOrderItem;
 use UsePack\IikoCloud\Entity\Requests\CreateOrder\Payment\Payment;
@@ -141,7 +141,7 @@ class Order extends BaseRequest
     /**
      * Information about Loyalty app.
      */
-    protected ?IikoCard5Info $iikoCard5Info = null;
+    protected ?LoyaltyInfo $loyaltyInfo = null;
 
     public function setId(?string $id): void
     {
@@ -277,8 +277,8 @@ class Order extends BaseRequest
         $this->discountsInfo = $discountsInfo;
     }
 
-    public function setIikoCard5Info(?IikoCard5Info $iikoCard5Info): void
+    public function setLoyaltyInfo(?LoyaltyInfo $loyaltyInfo): void
     {
-        $this->iikoCard5Info = $iikoCard5Info;
+        $this->loyaltyInfo = $loyaltyInfo;
     }
 }
